@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Posterama-Bold";
+  src: url("./assets/Posterama 2001 Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Posterama-Regular";
+  src: url("./assets/Posterama 2001 Regular.otf") format("opentype");
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  .container {
+    height: 100%;
+    background: linear-gradient(116.82deg, #2B2B2B 0%, #161616 100%);
+  }
+}

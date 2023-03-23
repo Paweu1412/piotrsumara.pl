@@ -1,0 +1,30 @@
+.container {
+  &--navigation {
+    width: calc(1920px * 0.08);
+    border-right: 1px solid #FFFFFF;
+
+    &--logo {
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+      padding-bottom: 100px;
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+    
+    &--contact-icons {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: calc(100vh - 422px);
+      padding-bottom: 50px;
+
+      img {
+        padding: 5px;
+      }
+    }
+  }
+}
