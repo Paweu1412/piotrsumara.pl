@@ -17,7 +17,7 @@ const ContactIcon = (iconNumber) => {
 		<div className="container--navigation--social-icon">
 			<img src={iconTypes[iconNumber]} alt="social icon" />
 		</div>
-	)
+	);
 }
 
 export const Home = () => {
@@ -29,9 +29,9 @@ export const Home = () => {
 				</div>
 
 				<div className="container--navigation--contact-icons">
-					{ContactIcon(1)}
-					{ContactIcon(2)}
-					{ContactIcon(3)}
+					{ContactIcon(1) /* phone icon */} 
+					{ContactIcon(2) /* messenger icon */}
+					{ContactIcon(3) /* email icon */}
 				</div>
 			</div>
 
@@ -39,5 +39,5 @@ export const Home = () => {
 				
 			</div>
 		</div>
-	)
+	);
 }
