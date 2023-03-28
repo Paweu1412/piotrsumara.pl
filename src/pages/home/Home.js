@@ -36,7 +36,15 @@ export const Home = () => {
 			</div>
 
 			<div className="container--general">
-				
+				<div className="container--general--background">
+					<img src={logoSignet} alt="big logo" />
+
+					<div className="container--general--background--text">
+						<span>
+							<h1>PIOTR{"\n"}SUMARA</h1>
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

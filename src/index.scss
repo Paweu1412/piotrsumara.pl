@@ -8,6 +8,11 @@
   src: url("./assets/Posterama 2001 Regular.otf") format("opentype");
 }
 
+:root {
+  --font-regular: "Posterama-Regular", sans-serif;
+  --font-bold: "Posterama-Bold", sans-serif;
+}
+
 body,
 html {
   margin: 0;
@@ -16,7 +21,8 @@ html {
 
 body {
   .container {
-    height: 100%;
+    display: flex;
+    width: 100%;
     background: linear-gradient(116.82deg, #2B2B2B 0%, #161616 100%);
   }
 }
