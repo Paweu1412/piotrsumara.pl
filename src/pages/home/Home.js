@@ -1,6 +1,7 @@
 import "./Home.scss";
 
 import logoSignet from "./assets/signet.svg";
+import plLang from "./assets/pl_lang.svg";
 
 import phoneIcon from "./assets/contact/phone.svg";
 import emailIcon from "./assets/contact/email.svg";
@@ -53,6 +54,11 @@ export const Home = () => {
 
               <div className="container--general--background--navbar--items--item">
                 <span>PORTFOLIO</span>
+              </div>
+
+              <div className="container--general--background--navbar--items--item">
+                <img src={plLang} alt="language" />
+                <span className="language">PL</span>
               </div>
             </div>
           </div>
