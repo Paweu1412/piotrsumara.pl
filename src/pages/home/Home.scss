@@ -8,25 +8,35 @@
     width: 150px;
     border-right: solid;
     border-width: 1px;
+    z-index: 1;
+
+    @media only screen and (max-width: 940px) {
+      display: none;
+    }
 
     &--logo {
-      display: flex;
+      position: fixed;
       width: 100%;
-      justify-content: center;
       margin-top: 50px;
       margin-bottom: 50px;
+      left: 50px;
     }
 
     &--social {
-      display: flex;
+      position: fixed;
       width: 100%;
-      justify-content: center;
-      padding-top: calc(100vh - 350px);
+      padding-top: calc(100vh - 200px);
+      left: 50px;
     }
   }
 
   .main {
     width: calc(100% - 150px);
+    z-index: 2;
+
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+    }
 
     &--header {
       height: 100px;
@@ -35,13 +45,18 @@
       .navigation {
         display: flex;
         justify-content: end;
-        height: 120%;
+        height: 100%;
         margin-right: 10%;
         align-items: center;
+
+        @media only screen and (max-width: 940px) {
+          justify-content: center;
+          margin-right: 0;
+        }
         
         &--option {
-          font-size: 20px;
-          padding-left: 20px;
+          font-size: 25px;
+          padding-left: 50px;
           
           a {
             color: white;
@@ -50,6 +65,19 @@
             &:hover {
               color: rgb(228, 228, 228);
             }
+          }
+
+          &.active {
+            a {
+              font-family: var(--font-bold);
+              color: #EFC862;
+              padding-bottom: 15px;
+              border-bottom: 3px solid #EFC862;
+            }
+          }
+
+          &.first {
+            padding-left: 0px;
           }
         }
       }
@@ -183,6 +211,37 @@
         //   color: #CCC;
         //   font-size: 20px;
         // }
+      }
+    }
+
+    &--fourth {
+      // height: 40vw;
+      // margin-top: 150px;
+
+      border: 1px solid;
+
+      .header {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        padding: 25px;
+        
+        &--item.upper {
+          color: #FFF;
+          font-size: 50px;
+          font-family: var(--font-bold);
+          margin-bottom: 0%;
+          margin-right: 20%;
+        }
+
+        &--item.lower {
+          color: #EFC862;
+          font-size: 35px;
+          font-family: var(--font-regular);
+          margin-top: 0%;
+          margin-left: 20%;
+        }
       }
     }
   }

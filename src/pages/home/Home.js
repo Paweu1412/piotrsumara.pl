@@ -11,9 +11,9 @@ import messengerIcon from "./assets/contact/messenger.svg";
 
 import rectangle from "./assets/rectangle.svg";
 
-import "animate.css/animate.min.css";
+// import "animate.css/animate.min.css";
 
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+// import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function Rectangles() {
   const [rectangles, setRectangles] = useState([]);
@@ -27,10 +27,10 @@ function Rectangles() {
       const width = window.innerWidth;
       const newRectangles = [];
 
-      if (width > 1460) newRectangles.push(Rectangle());
-      if (width > 1320) newRectangles.push(Rectangle());
-      if (width > 1200) newRectangles.push(Rectangle());
-      if (width > 1050) newRectangles.push(Rectangle());
+      if (width > 1460) { newRectangles.push(Rectangle()) };
+      if (width > 1320) { newRectangles.push(Rectangle()) };
+      if (width > 1200) { newRectangles.push(Rectangle()) };
+      if (width > 1100) { newRectangles.push(Rectangle()) };
 
       setRectangles(newRectangles);
     }
@@ -86,7 +86,7 @@ export const Home = () => {
       <div className="main">
         <div className="main--header">
           <div className="navigation">
-            <div className="navigation--option">
+            <div className="navigation--option first active">
               <a href="#">Home</a>
             </div>
 
@@ -116,35 +116,43 @@ export const Home = () => {
           </div>
         </div>
 
-        <AnimationOnScroll animateIn="animate__fadeInUp">
-          <div className="main--second">
-            <div className="content">
-              <h2>O MNIE</h2>
+        <div className="main--second">
+          <div className="content">
+            <h2>O mnie</h2>
+
+            <p>
+              Cześć, mam na imię Piotr i jestem grafikiem komputerowym. Moją pasją jest tworzenie projektów graficznych. Ukończyłem kierunek grafiki komputerowej w technikum, a niedługo zacznę rozwijać swoje umiejętności na studiach.
+            </p>
+          </div>
+        </div>
+
+        <div className="main--third">
+          <div className="content">
+            <div className="content--left">
+              <h2>Czym się zajmuję</h2>
 
               <p>
-                Cześć, mam na imię Piotr i jestem grafikiem komputerowym. Moją pasją jest tworzenie projektów graficznych. Ukończyłem kierunek grafiki komputerowej w technikum, a niedługo zacznę rozwijać swoje umiejętności na studiach.
+                Jestem specjalistą od projektowania grafiki 2D, a moje usługi obejmują tworzenie różnego rodzaju projektów - w tym ulotek, wizytówek, plakatów, książek oraz materiałów użytkowych dla firm. Dodatkowo zajmuję się projektowaniem UI/UX w programach Adobe XD oraz Figma.
               </p>
             </div>
-          </div>
-        </AnimationOnScroll>
-
-        <AnimationOnScroll animateIn="animate__fadeInUp">
-          <div className="main--third">
-            <div className="content">
-              <div className="content--left">
-                <h2>O MNIE</h2>
-
-                <p>
-                  Cześć, mam na imię Piotr i jestem grafikiem komputerowym. Moją pasją jest tworzenie projektów graficznych. Ukończyłem kierunek grafiki komputerowej w technikum, a niedługo zacznę rozwijać swoje umiejętności na studiach.
-                </p>
-              </div>
-              
-              <div className="content--right">
-                {Rectangles()}
-              </div>
+            
+            <div className="content--right">
+              {Rectangles()}
             </div>
           </div>
-        </AnimationOnScroll>
+        </div>
+
+        <div className="main--fourth">
+          <div className="header">
+            <h2 className="header--item upper">WYKONUJĘ PROJEKTY</h2>
+            <h2 className="header--item lower">W PROGRAMACH TAKICH JAK</h2>
+          </div>
+
+          <div className="grid">
+            <div className="grid--item">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
