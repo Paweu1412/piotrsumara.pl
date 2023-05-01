@@ -23,7 +23,6 @@ import premiere from "./assets/apps/premiere.svg";
 import procreate from "./assets/apps/procreate.svg";
 import xd from "./assets/apps/xd.svg";
 
-
 // import "animate.css/animate.min.css";
 
 // import { AnimationOnScroll } from 'react-animation-on-scroll';
@@ -40,13 +39,21 @@ const Rectangles = () => {
       const width = window.innerWidth;
       const newRectangles = [];
 
-      if (width > 1460) { newRectangles.push(Rectangle()) };
-      if (width > 1320) { newRectangles.push(Rectangle()) };
-      if (width > 1200) { newRectangles.push(Rectangle()) };
-      if (width > 1100) { newRectangles.push(Rectangle()) };
+      if (width > 1460) {
+        newRectangles.push(Rectangle());
+      }
+      if (width > 1320) {
+        newRectangles.push(Rectangle());
+      }
+      if (width > 1200) {
+        newRectangles.push(Rectangle());
+      }
+      if (width > 1100) {
+        newRectangles.push(Rectangle());
+      }
 
       setRectangles(newRectangles);
-    }
+    };
 
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -63,7 +70,52 @@ const Rectangles = () => {
       ))}
     </div>
   );
-}
+};
+
+const RectanglesLeft = () => {
+  const [rectangles, setRectangles] = useState([]);
+
+  const Rectangle = () => {
+    return <img src={rectangle} alt="rectangle" />;
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      const newRectangles = [];
+
+      if (width > 130) {
+        newRectangles.push(Rectangle());
+      }
+      if (width > 240) {
+        newRectangles.push(Rectangle());
+      }
+      if (width > 360) {
+        newRectangles.push(Rectangle());
+      }
+      if (width > 500) {
+        newRectangles.push(Rectangle());
+      }
+
+      setRectangles(newRectangles);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div className="rectangles">
+      {rectangles.map((rectangle, index) => (
+        <div key={index} className="rectangle">
+          {rectangle}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const ContactIcon = (props) => {
   const { iconNumber } = props;
@@ -85,10 +137,18 @@ export const Home = () => {
   return (
     <div className="container">
       <Menu>
-        <a id="home" href="/">HOME</a>
-        <a id="about" href="/about">O MNIE</a>
-        <a id="skills" href="/contact">UMIEJĘTNOŚCI</a>
-        <a id="portfolio" href="/contact">PORTFOLIO</a>
+        <a id="home" href="#home">
+          HOME
+        </a>
+        <a id="about" href="#aboutme">
+          O MNIE
+        </a>
+        <a id="skills" href="#skills">
+          UMIEJĘTNOŚCI
+        </a>
+        <a id="portfolio" href="#portfolio">
+          PORTFOLIO
+        </a>
       </Menu>
 
       <div className="sidebar">
@@ -107,43 +167,48 @@ export const Home = () => {
 
       <div className="main">
         <div className="main--header">
-          <div className="navigation" id="home">
+          <div className="navigation">
             <div className="navigation--option first">
               <a href="#home">Home</a>
             </div>
 
             <div className="navigation--option">
-              <a href="/">O MNIE</a>
+              <a href="#aboutme">O MNIE</a>
             </div>
 
             <div className="navigation--option">
-              <a href="/">UMIEJĘTNOŚCI</a>
+              <a href="#skills">UMIEJĘTNOŚCI</a>
             </div>
 
             <div className="navigation--option">
-              <a href="/">PORTFOLIO</a>                
+              <a href="#portfolio">PORTFOLIO</a>
             </div>
           </div>
         </div>
 
-        <div className="main--first">
+        <div className="main--first" id="home">
           <div className="grid">
             <div className="grid--item left">
               <img src={logoSignet} alt="signet" />
             </div>
 
             <div className="grid--item right">
-              <h1>PIOTR<br></br>SUMARA</h1>
+              <h1>
+                PIOTR<br></br>SUMARA
+              </h1>
             </div>
           </div>
         </div>
 
-        <div className="main--second">
+        <div className="main--second" id="aboutme">
           <div className="content">
             <h2>O mnie</h2>
 
             <p>
-              Cześć, mam na imię Piotr i jestem grafikiem komputerowym. Moją pasją jest tworzenie projektów graficznych. Ukończyłem kierunek grafiki komputerowej w technikum, a niedługo zacznę rozwijać swoje umiejętności na studiach.
+              Cześć, mam na imię Piotr i jestem grafikiem komputerowym. Moją
+              pasją jest tworzenie projektów graficznych. Ukończyłem kierunek
+              grafiki komputerowej w technikum, a niedługo zacznę rozwijać swoje
+              umiejętności na studiach.
             </p>
           </div>
         </div>
@@ -154,17 +219,21 @@ export const Home = () => {
               <h2>Czym się zajmuję</h2>
 
               <p>
-                Jestem specjalistą od projektowania grafiki 2D, a moje usługi obejmują tworzenie różnego rodzaju projektów - w tym ulotek, wizytówek, plakatów, książek oraz materiałów użytkowych dla firm. Dodatkowo zajmuję się projektowaniem UI/UX w programach Adobe XD oraz Figma.
+                Jestem specjalistą od projektowania grafiki 2D, a moje usługi
+                obejmują tworzenie różnego rodzaju projektów - w tym ulotek,
+                wizytówek, plakatów, książek oraz materiałów użytkowych dla
+                firm. Dodatkowo zajmuję się projektowaniem UI/UX w programach
+                Adobe XD oraz Figma.
               </p>
             </div>
-            
+
             <div className="content--right">
               <Rectangles />
             </div>
           </div>
         </div>
 
-        <div className="main--fourth">
+        <div className="main--fourth" id="skills">
           <div className="header">
             <h2 className="header--item upper">WYKONUJĘ PROJEKTY</h2>
             <h2 className="header--item lower">W PROGRAMACH TAKICH JAK</h2>
@@ -172,44 +241,88 @@ export const Home = () => {
 
           <div className="grid">
             <div className="grid--item">
-              <img src={acrobat} alt="Adobe Acrobat" className="grid--icon"/>
+              <img src={acrobat} alt="Adobe Acrobat" className="grid--icon" />
               <h3 className="grid--title">Adobe Acrobat</h3>
             </div>
             <div className="grid--item">
-              <img src={photoshop} alt="Adobe Photoshop" className="grid--icon"/>
+              <img
+                src={photoshop}
+                alt="Adobe Photoshop"
+                className="grid--icon"
+              />
               <h3 className="grid--title">Adobe Photoshop</h3>
             </div>
             <div className="grid--item">
-              <img src={illustrator} alt="Adobe Illustrator" className="grid--icon"/>
+              <img
+                src={illustrator}
+                alt="Adobe Illustrator"
+                className="grid--icon"
+              />
               <h3 className="grid--title">Adobe Illustrator</h3>
             </div>
             <div className="grid--item">
-              <img src={premiere} alt="Adobe Premiere Pro" className="grid--icon"/>
+              <img
+                src={premiere}
+                alt="Adobe Premiere Pro"
+                className="grid--icon"
+              />
               <h3 className="grid--title">Adobe Premiere Pro</h3>
             </div>
             <div className="grid--item">
-              <img src={indesign} alt="Adobe InDesign" className="grid--icon"/>
+              <img src={indesign} alt="Adobe InDesign" className="grid--icon" />
               <h3 className="grid--title">Adobe InDesign</h3>
             </div>
             <div className="grid--item">
-              <img src={figma} alt="Figma" className="grid--icon"/>
+              <img src={figma} alt="Figma" className="grid--icon" />
               <h3 className="grid--title">Figma</h3>
             </div>
             <div className="grid--item">
-              <img src={xd} alt="Adobe Xd" className="grid--icon"/>
+              <img src={xd} alt="Adobe Xd" className="grid--icon" />
               <h3 className="grid--title">Adobe Xd</h3>
             </div>
             <div className="grid--item">
-              <img src={lightroom} alt="Adobe Lightroom" className="grid--icon"/>
+              <img
+                src={lightroom}
+                alt="Adobe Lightroom"
+                className="grid--icon"
+              />
               <h3 className="grid--title">Adobe Lightroom</h3>
             </div>
             <div className="grid--item">
-              <img src={procreate} alt="Procreate" className="grid--icon"/>
+              <img src={procreate} alt="Procreate" className="grid--icon" />
               <h3 className="grid--title">Procreate</h3>
             </div>
             <div className="grid--item">
-              <img src={impozycjoner} alt="Impozycjoner" className="grid--icon"/>
+              <img
+                src={impozycjoner}
+                alt="Impozycjoner"
+                className="grid--icon"
+              />
               <h3 className="grid--title">Impozycjoner</h3>
+            </div>
+          </div>
+
+          <div className="main--fifth" id="whyui">
+            <div className="content">
+              <div className="content--left">
+                <h2>DLACZEGO GRAFIKA?</h2>
+
+                <p>
+                  Zajmuję się grafiką, ponieważ uwielbiam tworzyć coś nowego i
+                  oryginalnego. Jestem zafascynowany możliwościami, jakie daje
+                  mi praca w tej dziedzinie. Zajmując się grafiką, ciągle się
+                  uczę i rozwijam swoje umiejętności, co daje mi wiele
+                  satysfakcji i pozwala na ciągłe wyzwania. grafika to dla mnie
+                  nie tylko praca, ale przede wszystkim pasja, która daje mi
+                  wiele radości i spełnienia.
+                </p>
+              </div>
+              <div className="content--right">
+                <img src={logoSignet} alt="logo" />
+              </div>
+              <div className="rectangles">
+                <RectanglesLeft />
+              </div>
             </div>
           </div>
         </div>
