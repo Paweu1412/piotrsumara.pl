@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { slide as Menu } from "react-burger-menu";
+import FsLightbox from "fslightbox-react";
 
 import "./Home.scss";
 
@@ -22,6 +23,27 @@ import lightroom from "./assets/apps/lightroom.svg";
 import premiere from "./assets/apps/premiere.svg";
 import procreate from "./assets/apps/procreate.svg";
 import xd from "./assets/apps/xd.svg";
+
+import firstImage from "./assets/portfolio/1.jpg";
+import secondImage from "./assets/portfolio/2.jpg";
+import thirdImage from "./assets/portfolio/3.jpg";
+import fourthImage from "./assets/portfolio/4.jpg";
+import fifthImage from "./assets/portfolio/5.jpg";
+import sixthImage from "./assets/portfolio/6.jpg";
+import seventhImage from "./assets/portfolio/7.png";
+import eighthImage from "./assets/portfolio/8.pdf";
+import ninthImage from "./assets/portfolio/9.pdf";
+import tenthImage from "./assets/portfolio/10.pdf";
+import eleventhImage from "./assets/portfolio/11.png";
+import twelfthImage from "./assets/portfolio/12.png";
+import thirteenthImage from "./assets/portfolio/13.png";
+import fourteenthImage from "./assets/portfolio/14.png";
+import fifteenthImage from "./assets/portfolio/15.png";
+import sixteenthImage from "./assets/portfolio/16.jpg";
+import seventeenthImage from "./assets/portfolio/17.jpg";
+import eighteenthImage from "./assets/portfolio/18.jpg";
+import nineteenthImage from "./assets/portfolio/19.jpg";
+import twentiethImage from "./assets/portfolio/20.jpg";
 
 // import "animate.css/animate.min.css";
 
@@ -134,6 +156,18 @@ const ContactIcon = (props) => {
 };
 
 export const Home = () => {
+  const [lightboxController, setLightBoxController] = useState({
+    toggler: false,
+    sourceIndex: 0,
+  });
+
+  const openLightboxOnSource = (sourceIndex) => {
+    setLightBoxController({
+      toggler: !lightboxController.toggler,
+      sourceIndex: sourceIndex,
+    });
+  };
+
   return (
     <div className="container">
       <Menu>
@@ -323,6 +357,175 @@ export const Home = () => {
               <div className="rectangles">
                 <RectanglesLeft />
               </div>
+            </div>
+          </div>
+
+          <div className="main--sixth" id="portfolio">
+            <div className="content">
+              <div className="content--header">
+                <h2 className="header--text">PORTFOLIO</h2>
+              </div>
+
+              <div className="content--design">
+                <h2 className="design--header">DESIGN</h2>
+              </div>
+
+              <div className="portfolio--upper">
+                <div
+                  className="first-photo"
+                  onClick={() => openLightboxOnSource(0)}
+                >
+                  <img 
+                    src={sixthImage} 
+                    alt="firstImage" 
+                  />
+                </div>
+
+                <div
+                  className="second-photo"
+                  onClick={() => openLightboxOnSource(1)}
+                >
+                  <img
+                    src={secondImage}
+                    alt="secondImage"
+                  />
+                </div>
+
+                <div
+                  className="third-photo"
+                  onClick={() => openLightboxOnSource(2)}
+                >
+                  <img
+                    src={eleventhImage}
+                    alt="thirdImage"
+                  />
+                </div>
+              </div>
+
+              <div className="portfolio--upper">
+                <div
+                  className="fourth-photo"
+                  onClick={() => openLightboxOnSource(3)}
+                >
+                  <img 
+                    src={twelfthImage} 
+                    alt="fourthImage" 
+                  />
+                </div>
+
+                <div
+                  className="fifth-photo"
+                  onClick={() => openLightboxOnSource(4)}
+                >
+                  <img
+                    src={thirteenthImage}
+                    alt="fifthImage"
+                  />
+                </div>
+
+                <div
+                  className="seventh-photo"
+                  onClick={() => openLightboxOnSource(5)}
+                >
+                  <img
+                    src={fifteenthImage}
+                    alt="seventhImage"
+                  />
+                </div>
+
+                <div
+                  className="sixth-photo"
+                  onClick={() => openLightboxOnSource(6)}
+                >
+                  <img
+                    src={fourteenthImage}
+                    alt="sixthImage"
+                  />
+                </div>
+              </div>
+
+              <div className="content--design">
+                <h2 className="design--header">PROJEKT UBRAŃ</h2>
+              </div>
+
+              <div className="portfolio--clothes">
+                <div
+                  className="seventh-photo"
+                  onClick={() => openLightboxOnSource(7)}
+                >
+                  <img 
+                    src={thirdImage} 
+                    alt="seventhImage" 
+                  />
+                </div>
+
+                <div
+                  className="eighth-photo"
+                  onClick={() => openLightboxOnSource(8)}
+                >
+                  <img 
+                    src={firstImage} 
+                    alt="eightImage" 
+                  />
+                </div>
+
+                <div
+                  className="nineth-photo"
+                  onClick={() => openLightboxOnSource(9)}
+                >
+                  <img 
+                    src={fifthImage} 
+                    alt="ninethImage" 
+                  />
+                </div>
+
+                <div
+                  className="tenth-photo"
+                  onClick={() => openLightboxOnSource(10)}
+                >
+                  <img 
+                    src={fourthImage} 
+                    alt="tenthImage" 
+                  />
+                </div>
+              </div>
+
+              <div className="content--design">
+                <h2 className="design--header">KSIĄŻKA FIRMOWA</h2>
+              </div>
+
+              <div className="portfolio--book">
+
+              </div>
+
+              <FsLightbox
+                toggler={lightboxController.toggler}
+                sourceIndex={lightboxController.sourceIndex}
+                sources={[
+                  sixthImage,
+                  secondImage,
+                  eleventhImage,
+                  twelfthImage,
+                  thirteenthImage,
+                  fifteenthImage,
+                  fourteenthImage,
+                  thirdImage,
+                  firstImage,
+                  fifthImage,
+                  fourthImage
+                ]}
+                onOpen={() => {
+                  if (window.innerWidth < 850) {
+                    document.getElementsByClassName("bm-burger-button")[0].style.display = 'none'}
+                  }
+                }
+                
+                onClose={() => {
+                  if (window.innerWidth < 850) {
+                    document.getElementsByClassName("bm-burger-button")[0].style.display = 'block'}
+                  }
+                }
+              />
             </div>
           </div>
         </div>
