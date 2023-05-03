@@ -40,7 +40,6 @@
 
     &--header {
       height: 100px;
-      border: 1px solid;
 
       .navigation {
         display: flex;
@@ -89,7 +88,6 @@
 
     &--first {
       // height: 40vw;
-      border: 1px solid;
       padding: 50px;
 
       .grid {
@@ -154,8 +152,6 @@
       display: flex;
       justify-content: right;
 
-      border: 1px solid;
-
       .content {
         padding: 25px;
         padding-right: 50px;
@@ -179,7 +175,6 @@
     &--third {
       // height: 40vw;
       // margin-top: 150px;
-      border: 1px solid;
       position: relative;
 
       .content {
@@ -230,8 +225,6 @@
     &--fourth {
       // height: 40vw;
       // margin-top: 150px;
-
-      border: 1px solid;
 
       .header {
         display: flex;
@@ -322,7 +315,6 @@
     }
 
     &--fifth {
-      border: 1px solid;
 
       .content {
         padding: 50px;
@@ -480,6 +472,46 @@
         }
 
         .portfolio--book {
+          padding: 25px;
+
+          .content {
+            display: flex;
+            justify-content: center;
+
+            img {
+              width: 700px;
+              cursor: grab;
+
+              @media only screen and (max-width: 690px) {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        .footer {
+          margin-top: 150px;
+          width: 100%;
+
+          &--content {
+            h2 {
+              color: #EFC862;
+              font-family: var(--font-bold);
+            }
+
+            p {
+              color: #CCCCCC;
+              line-height: 180%;
+            }
+            
+            padding: 50px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            background-color: #161616;
+            display: flex;
+            flex-direction: column;
+          }
         }
       } 
     }

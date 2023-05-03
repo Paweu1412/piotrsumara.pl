@@ -267,7 +267,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="main--fourth" id="skills">
+        <div className="main--fourth">
           <div className="header">
             <h2 className="header--item upper">WYKONUJĘ PROJEKTY</h2>
             <h2 className="header--item lower">W PROGRAMACH TAKICH JAK</h2>
@@ -491,11 +491,28 @@ export const Home = () => {
               </div>
 
               <div className="content--design">
-                <h2 className="design--header">KSIĄŻKA FIRMOWA</h2>
+                <h2 className="design--header">UX/UI</h2>
               </div>
 
               <div className="portfolio--book">
+                <div className="content">
+                  <img 
+                    src={fourteenthImage} 
+                    alt="redirect image" 
+                  />
+                </div>
+              </div>
 
+              <div className="footer">
+                <div className="footer--content">
+                  <h2>KONTAKT</h2>
+                  
+                  <p>
+                    TEL. +48 510 730 071<br></br>
+                    E-MAIL: piotrsumaracontact@gmail.com<br></br>
+                    32-700 Bochnia, Małopolskie
+                  </p>
+                </div>
               </div>
 
               <FsLightbox
