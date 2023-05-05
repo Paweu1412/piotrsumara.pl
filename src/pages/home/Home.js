@@ -30,20 +30,44 @@ import thirdImage from "./assets/portfolio/3.jpg";
 import fourthImage from "./assets/portfolio/4.jpg";
 import fifthImage from "./assets/portfolio/5.jpg";
 import sixthImage from "./assets/portfolio/6.jpg";
-import seventhImage from "./assets/portfolio/7.png";
-import eighthImage from "./assets/portfolio/8.pdf";
-import ninthImage from "./assets/portfolio/9.pdf";
-import tenthImage from "./assets/portfolio/10.pdf";
+// import seventhImage from "./assets/portfolio/7.png";
+// import eighthImage from "./assets/portfolio/8.pdf";
+// import ninthImage from "./assets/portfolio/9.pdf";
+// import tenthImage from "./assets/portfolio/10.pdf";
 import eleventhImage from "./assets/portfolio/11.png";
 import twelfthImage from "./assets/portfolio/12.png";
 import thirteenthImage from "./assets/portfolio/13.png";
 import fourteenthImage from "./assets/portfolio/14.png";
 import fifteenthImage from "./assets/portfolio/15.png";
-import sixteenthImage from "./assets/portfolio/16.jpg";
-import seventeenthImage from "./assets/portfolio/17.jpg";
-import eighteenthImage from "./assets/portfolio/18.jpg";
-import nineteenthImage from "./assets/portfolio/19.jpg";
-import twentiethImage from "./assets/portfolio/20.jpg";
+import button from "./assets/portfolio/button.png";
+import prototype from "./assets/portfolio/prototype.png";
+// import sixteenthImage from "./assets/portfolio/16.jpg";
+// import seventeenthImage from "./assets/portfolio/17.jpg";
+// import eighteenthImage from "./assets/portfolio/18.jpg";
+// import nineteenthImage from "./assets/portfolio/19.jpg";
+// import twentiethImage from "./assets/portfolio/20.jpg";
+
+import firstImageThumb from "./assets/portfolio/smaller/1.jpg";
+import secondImageThumb from "./assets/portfolio/smaller/2.jpg";
+import thirdImageThumb from "./assets/portfolio/smaller/3.jpg";
+import fourthImageThumb from "./assets/portfolio/smaller/4.jpg";
+import fifthImageThumb from "./assets/portfolio/smaller/5.jpg";
+import sixthImageThumb from "./assets/portfolio/smaller/6.jpg";
+// import seventhImageThumb from "./assets/portfolio/smaller/7.png";
+// import eighthImageThumb from "./assets/portfolio/smaller/8.jpg";
+// import ninthImageThumb from "./assets/portfolio/smaller/9.jpg";
+// import tenthImageThumb from "./assets/portfolio/smaller/10.jpg";
+import eleventhImageThumb from "./assets/portfolio/smaller/11.png";
+import twelfthImageThumb from "./assets/portfolio/smaller/12.png";
+import thirteenthImageThumb from "./assets/portfolio/smaller/13.png";
+import fourteenthImageThumb from "./assets/portfolio/smaller/14.png";
+import fifteenthImageThumb from "./assets/portfolio/smaller/15.png";
+// import sixteenthImageThumb from "./assets/portfolio/smaller/16.jpg";
+// import seventeenthImageThumb from "./assets/portfolio/smaller/17.jpg";
+// import eighteenthImageThumb from "./assets/portfolio/smaller/18.jpg";
+// import nineteenthImageThumb from "./assets/portfolio/smaller/19.jpg";
+// import twentiethImageThumb from "./assets/portfolio/smaller/20.jpg";
+
 
 // import "animate.css/animate.min.css";
 
@@ -143,14 +167,14 @@ const ContactIcon = (props) => {
   const { iconNumber } = props;
 
   const iconTypes = {
-    1: phoneIcon,
-    2: messengerIcon,
-    3: emailIcon,
+    1: [phoneIcon, "tel:+48510730071"],
+    2: [messengerIcon, "https://www.facebook.com/profile.php?id=100010513291901"],
+    3: [emailIcon, "mailto:piotrsumaracontact@gmail.com"],
   };
 
   return (
     <div className="sidebar--social-icon">
-      <img src={iconTypes[iconNumber]} alt="social icon" />
+      <a href={iconTypes[iconNumber][1]}><img src={iconTypes[iconNumber][0]} alt="social icon"/></a>
     </div>
   );
 };
@@ -177,10 +201,10 @@ export const Home = () => {
         <a id="about" href="#aboutme">
           O MNIE
         </a>
-        <a id="skills" href="#skills">
+        <a id="skills" href="#myskills">
           UMIEJĘTNOŚCI
         </a>
-        <a id="portfolio" href="#portfolio">
+        <a id="portfolio" href="#myportfolio">
           PORTFOLIO
         </a>
       </Menu>
@@ -211,11 +235,11 @@ export const Home = () => {
             </div>
 
             <div className="navigation--option">
-              <a href="#skills">UMIEJĘTNOŚCI</a>
+              <a href="#myskills">UMIEJĘTNOŚCI</a>
             </div>
 
             <div className="navigation--option">
-              <a href="#portfolio">PORTFOLIO</a>
+              <a href="#myportfolio">PORTFOLIO</a>
             </div>
           </div>
         </div>
@@ -230,6 +254,10 @@ export const Home = () => {
               <h1>
                 PIOTR<br></br>SUMARA
               </h1>
+
+              <p>
+                GRAFIK KOMPUTEROWY
+              </p>
             </div>
           </div>
         </div>
@@ -267,7 +295,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="main--fourth">
+        <div className="main--fourth" id="myskills">
           <div className="header">
             <h2 className="header--item upper">WYKONUJĘ PROJEKTY</h2>
             <h2 className="header--item lower">W PROGRAMACH TAKICH JAK</h2>
@@ -336,7 +364,7 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="main--fifth" id="whyui">
+          <div className="main--fifth">
             <div className="content">
               <div className="content--left">
                 <h2>DLACZEGO GRAFIKA?</h2>
@@ -360,7 +388,7 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="main--sixth" id="portfolio">
+          <div className="main--sixth" id="myportfolio">
             <div className="content">
               <div className="content--header">
                 <h2 className="header--text">PORTFOLIO</h2>
@@ -376,7 +404,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(0)}
                 >
                   <img 
-                    src={sixthImage} 
+                    src={sixthImageThumb} 
                     alt="firstImage" 
                   />
                 </div>
@@ -386,7 +414,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(1)}
                 >
                   <img
-                    src={secondImage}
+                    src={secondImageThumb}
                     alt="secondImage"
                   />
                 </div>
@@ -396,7 +424,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(2)}
                 >
                   <img
-                    src={eleventhImage}
+                    src={eleventhImageThumb}
                     alt="thirdImage"
                   />
                 </div>
@@ -408,7 +436,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(3)}
                 >
                   <img 
-                    src={twelfthImage} 
+                    src={twelfthImageThumb} 
                     alt="fourthImage" 
                   />
                 </div>
@@ -418,7 +446,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(4)}
                 >
                   <img
-                    src={thirteenthImage}
+                    src={thirteenthImageThumb}
                     alt="fifthImage"
                   />
                 </div>
@@ -428,7 +456,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(5)}
                 >
                   <img
-                    src={fifteenthImage}
+                    src={fifteenthImageThumb}
                     alt="seventhImage"
                   />
                 </div>
@@ -438,7 +466,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(6)}
                 >
                   <img
-                    src={fourteenthImage}
+                    src={fourteenthImageThumb}
                     alt="sixthImage"
                   />
                 </div>
@@ -454,7 +482,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(7)}
                 >
                   <img 
-                    src={thirdImage} 
+                    src={thirdImageThumb} 
                     alt="seventhImage" 
                   />
                 </div>
@@ -464,7 +492,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(8)}
                 >
                   <img 
-                    src={firstImage} 
+                    src={firstImageThumb} 
                     alt="eightImage" 
                   />
                 </div>
@@ -474,7 +502,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(9)}
                 >
                   <img 
-                    src={fifthImage} 
+                    src={fifthImageThumb} 
                     alt="ninethImage" 
                   />
                 </div>
@@ -484,7 +512,7 @@ export const Home = () => {
                   onClick={() => openLightboxOnSource(10)}
                 >
                   <img 
-                    src={fourthImage} 
+                    src={fourthImageThumb} 
                     alt="tenthImage" 
                   />
                 </div>
@@ -497,9 +525,13 @@ export const Home = () => {
               <div className="portfolio--book">
                 <div className="content">
                   <img 
-                    src={fourteenthImage} 
-                    alt="redirect image" 
+                    src={prototype} 
+                    alt="redirect"
                   />
+
+                  <div className="button">
+                    <a href="https://www.figma.com/proto/5z8A2mJRuNtkaWFW7LL0mc/Prelitech-Service?node-id=1-2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=15%3A6779"><img src={button}></img></a>
+                  </div>
                 </div>
               </div>
 
