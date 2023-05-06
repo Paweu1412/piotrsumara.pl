@@ -439,6 +439,18 @@
             }
           }
 
+          .seventh-photo {
+            @media only screen and (max-width: 650px) {
+              width: 95vw !important;
+            }
+          }
+
+          .sixth-photo {
+            @media only screen and (max-width: 650px) {
+              width: 95vw !important;
+            }
+          }
+
           .third-photo {
             padding: 20px;
 
@@ -561,7 +573,7 @@
   left: 36px;
   top: 36px;
 
-  @media only screen and (min-width: 850px) {
+  @media only screen and (min-width: 940px) {
     display: none;
   }
 }

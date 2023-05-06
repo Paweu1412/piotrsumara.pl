@@ -207,6 +207,17 @@ export const Home = () => {
         <a id="portfolio" href="#myportfolio">
           PORTFOLIO
         </a>
+
+        <div 
+          className="sidebar--social-icons" 
+          style={{
+            display: "flex",
+          }}>
+            <ContactIcon iconNumber={1} />
+            <ContactIcon iconNumber={2} />
+            <ContactIcon iconNumber={3} />
+        </div>
+        
       </Menu>
 
       <div className="sidebar">
