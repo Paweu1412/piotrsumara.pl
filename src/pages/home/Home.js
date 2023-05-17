@@ -9,7 +9,7 @@ import logoSignet from "./assets/signet.svg";
 
 import phoneIcon from "./assets/contact/phone.svg";
 import emailIcon from "./assets/contact/email.svg";
-import messengerIcon from "./assets/contact/messenger.svg";
+import facebookIcon from "./assets/contact/facebook.svg";
 
 import rectangle from "./assets/rectangle.svg";
 
@@ -168,7 +168,7 @@ const ContactIcon = (props) => {
 
   const iconTypes = {
     1: [phoneIcon, "tel:+48510730071"],
-    2: [messengerIcon, "https://www.facebook.com/profile.php?id=100010513291901"],
+    2: [facebookIcon, "https://www.facebook.com/profile.php?id=100010513291901"],
     3: [emailIcon, "mailto:piotrsumaracontact@gmail.com"],
   };
 
@@ -258,7 +258,7 @@ export const Home = () => {
         <div className="main--first" id="home">
           <div className="grid">
             <div className="grid--item left">
-              <img src={logoSignet} alt="signet" />
+              <img src={logoSignet} alt="" />
             </div>
 
             <div className="grid--item right">
@@ -541,7 +541,7 @@ export const Home = () => {
                   />
 
                   <div className="button">
-                    <a href="https://www.figma.com/proto/5z8A2mJRuNtkaWFW7LL0mc/Prelitech-Service?node-id=1-2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=15%3A6779"><img src={button}></img></a>
+                    <a href="https://www.figma.com/proto/5z8A2mJRuNtkaWFW7LL0mc/Prelitech-Service?node-id=1-2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=15%3A6779"><img src={button} alt=""></img></a>
                   </div>
                 </div>
               </div>

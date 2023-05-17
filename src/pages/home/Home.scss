@@ -510,6 +510,7 @@
             .button {
               position: absolute;
               top: 35%;
+              transition: scale .3s;
 
               img {
                 width: 400px;
@@ -521,9 +522,7 @@
               }
 
               &:hover {
-                img {
-                  animation: zoom 0.2s ease-in infinite alternate;
-                }
+                scale: 1.02;
               }
 
               @keyframes zoom {
