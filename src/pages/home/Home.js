@@ -168,7 +168,7 @@ const ContactIcon = (props) => {
 
   const iconTypes = {
     1: [phoneIcon, "tel:+48510730071"],
-    2: [facebookIcon, "https://www.facebook.com/profile.php?id=100010513291901"],
+    2: [facebookIcon, "https://www.facebook.com/PerfectD3sign"],
     3: [emailIcon, "mailto:piotrsumaracontact@gmail.com"],
   };
 
